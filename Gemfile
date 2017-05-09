@@ -33,7 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development do
-    gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.0'
+
+  # デバッグ用
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
 end
 
 group :development, :test do
@@ -48,10 +54,6 @@ group :development, :test do
 
   # メール送信確認用
   gem 'letter_opener_web'
-
-  # デバッグ用
-  gem 'pry-rails'
-  gem 'better_errors'
 
   # 環境変数設定？用
   # gem 'dotenv-rails'
