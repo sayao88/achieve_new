@@ -6,10 +6,21 @@ describe Contact do
         contact = Contact.new(name:'yamada',email:'yamada@mail.com',content:'教えてください')
         expect(contact).to be_valid
     end
-  #入力内容がなければ無効であること
-    it "is invalid without name,email,content" do
-        contact = Contact.new
+  #nameの入力内容がなければ無効であること
+    it "is invalid without name" do
+        contact = Contact.new(email:'yamada@mail.com',content:'教えてください')
         expect(contact).not_to be_valid
     end
+  #emailの入力内容がなければ無効であること
+    it "is invalid without email" do
+        contact = Contact.new(name:'yamada',content:'教えてください')
+        expect(contact).not_to be_valid
+    end
+  #contentの入力内容がなければ無効であること
+    it "is invalid without content" do
+        contact = Contact.new(name:'yamada',email:'yamada@mail.com')
+        expect(contact).not_to be_valid
+    end
+
 
 end
