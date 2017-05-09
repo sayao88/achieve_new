@@ -26,8 +26,11 @@ module Achieve
     # エラー出力タグを独自デザインするため設定
     config.action_view.field_error_proc = proc { |html_tag, _| html_tag }
 
-    # テスト用
     config.generators do |g|
+      g.assets     false
+      g.helper     false
+
+      # テスト用
       g.test_framework :rspec,
         fixtures: true,
         view_specs: false,
